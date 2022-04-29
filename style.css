@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-size: 15px;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+p {
+  color: var(--Grayish-Blue);
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  color: var(--Very-Dark-Blue);
+}
+h1 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size);
+  font-family: "Poppins";
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--Very-Light-Gray);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 1em;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.intro {
+  text-align: center;
+  line-height: 1.5em;
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+.intro h1:first-of-type {
+  color: var(--Grayish-Blue);
+  font-weight: 200;
+}
+
+.card-container {
+  display: grid;
+  gap: 2.5em;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.card {
+  padding: 2em;
+  width: 100%;
+  max-width: 25em;
+  background-color: var(--white);
+  border-radius: 0.5em;
+}
+
+.supervisor {
+  box-shadow: 0 -5px 0 -1px var(--Cyan), 0px 5px 10px 5px var(--Very-Light-Gray);
+}
+.builder {
+  box-shadow: 0 -5px 0 -1px var(--Red), 0px 5px 10px 5px cyan;
+}
+.karma {
+  box-shadow: 0 -5px 0 -1px var(--Orange), 0px 5px 10px 5px cyan;
+}
+.calculator {
+  box-shadow: 0 -5px 0 -1px var(--Blue), 0px 5px 10px 5px cyan;
+}
+
+@media screen and (min-width: 75em) {
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .supervisor {
+    grid-column: 1/2;
+    transform: translateY(50%);
+    transition: 1.5s;
+  }
+  .builder {
+    grid-column: 2/3;
+  }
+  .karma {
+    grid-column: -3/-2;
+  }
+  .calculator {
+    grid-column: -2/-1;
+    transform: translateY(-50%);
+    transition: 1.5s ease-out;
+  }
+}
+
+.card__icon {
+  width: 4em;
+}
+
+.f-end {
+  display: flex;
+  justify-content: flex-end;
+}
